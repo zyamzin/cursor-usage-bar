@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 315 264" role="img" aria-label="Zyamzin">
+  <defs>
+    <linearGradient id="zGrad" x1="42.23" y1="17.04" x2="281.1" y2="255.91" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#00e2c9"/>
+      <stop offset="0.52" stop-color="#3243f5"/>
+      <stop offset="1" stop-color="#ca21f0"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#zGrad)" d="M34.94,0h231.51c-23.49,23.85-46.99,47.72-70.48,71.59h-97.35s24.54,31.94,24.54,31.94h41.35c-24.44,24.79-48.85,49.59-73.29,74.4L0,74.82,34.94,0ZM314.12,188.92l-91.21-103.12c-24.44,24.82-48.85,49.61-73.29,74.4h41.35s24.54,31.94,24.54,31.94h-97.35c-23.49,23.87-46.99,47.74-70.48,71.59h231.51s34.94-74.82,34.94-74.82Z"/>
+</svg>
