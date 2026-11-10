@@ -45,15 +45,19 @@
 
 ## Сборка из исходников
 
-Если хотите собрать приложение сами, нужны [Xcode Command Line Tools](https://developer.apple.com/xcode/resources/) и macOS 14 или новее:
+Если хотите собрать приложение сами, нужны [Xcode Command Line Tools](https://developer.apple.com/xcode/resources/) и macOS 14 или новее.
+
+Универсальную сборку (Apple Silicon и Intel), иконку, DMG и ZIP как в релизе можно получить так:
 
 ```bash
 git clone https://github.com/zyamzin/cursor-usage-bar.git
 cd cursor-usage-bar
-swift build -c release
+./packaging/build-release.sh
 ```
 
-Готовый файл лежит в `.build/release/CursorUsageBar` (или в `.build/apple/Products/Release/` при универсальной сборке). Его нужно положить в `Cursor Usage.app/Contents/MacOS/CursorUsage` и добавить `packaging/Info.plist` как `Contents/Info.plist`. Если `swift build` сообщает об ошибке XCBuild, соберите тот же исполняемый файл через `swiftc` из исходников в `Sources/CursorUsageBar` (нужны фреймворки AppKit, SwiftUI, ServiceManagement, Security и библиотека sqlite3). Затем можно подписать приложение своей подписью или одноразовой ad-hoc подписью:
+Готовые файлы появятся в каталоге `release/`: `Cursor Usage.app`, `Cursor-Usage.dmg` и `Cursor-Usage.zip`.
+
+Если собираете вручную, положите исполняемый файл в `Cursor Usage.app/Contents/MacOS/CursorUsage`, `packaging/Info.plist` — в `Contents/Info.plist`, а иконку `packaging/icon/AppIcon.icns` — в `Contents/Resources/AppIcon.icns`. Если `swift build` сообщает об ошибке XCBuild, соберите тот же исполняемый файл через `swiftc` из исходников в `Sources/CursorUsageBar` (нужны фреймворки AppKit, SwiftUI, ServiceManagement и библиотека sqlite3). Затем можно подписать приложение своей подписью или одноразовой ad-hoc подписью:
 
 ```bash
 codesign --force --deep --sign - "Cursor Usage.app"
